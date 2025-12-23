@@ -1,0 +1,27 @@
+[
+  {
+    "id": "CASHIER",
+    "name": "Cashier",
+    "description": "Handles billing, POS operations, and customer checkout"
+  },
+  {
+    "id": "BARISTA",
+    "name": "Barista",
+    "description": "Prepares coffee and beverages in cafe environment"
+  },
+  {
+    "id": "COOK",
+    "name": "Cook",
+    "description": "Prepares food in kitchen operations"
+  },
+  {
+    "id": "SUPERVISOR",
+    "name": "Supervisor",
+    "description": "Supervises staff and oversees shift operations"
+  },
+  {
+    "id": "CLEANING",
+    "name": "Cleaning",
+    "description": "Responsible for cleaning and maintenance tasks"
+  }
+]

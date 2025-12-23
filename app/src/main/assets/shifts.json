@@ -1,0 +1,222 @@
+[
+  {
+    "id": "shift_001",
+    "date": "2025-12-20",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 2,
+    "assignedEmployeeIds": ["emp_001"],
+    "status": "PARTIALLY_FILLED"
+  },
+  {
+    "id": "shift_002",
+    "date": "2025-12-21",
+    "startTime": "12:00",
+    "endTime": "16:00",
+    "location": "Kitchen",
+    "requiredSkills": ["Cook"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_003",
+    "date": "2025-12-22",
+    "startTime": "06:00",
+    "endTime": "14:00",
+    "location": "Cafe",
+    "requiredSkills": ["Barista"],
+    "minStaff": 2,
+    "assignedEmployeeIds": ["emp_002"],
+    "status": "PARTIALLY_FILLED"
+  },
+  {
+    "id": "shift_004",
+    "date": "2025-12-23",
+    "startTime": "17:00",
+    "endTime": "21:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier", "Supervisor"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_005",
+    "date": "2025-12-24",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "Warehouse",
+    "requiredSkills": ["Supervisor"],
+    "minStaff": 1,
+    "assignedEmployeeIds": ["emp_003"],
+    "status": "FILLED"
+  },
+  {
+    "id": "shift_006",
+    "date": "2025-12-25",
+    "startTime": "08:00",
+    "endTime": "12:00",
+    "location": "Cafe",
+    "requiredSkills": ["Barista"],
+    "minStaff": 2,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_007",
+    "date": "2025-12-26",
+    "startTime": "14:00",
+    "endTime": "22:00",
+    "location": "Kitchen",
+    "requiredSkills": ["Cook"],
+    "minStaff": 1,
+    "assignedEmployeeIds": ["emp_003"],
+    "status": "FILLED"
+  },
+  {
+    "id": "shift_008",
+    "date": "2025-12-27",
+    "startTime": "10:00",
+    "endTime": "14:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 2,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_009",
+    "date": "2025-12-28",
+    "startTime": "16:00",
+    "endTime": "20:00",
+    "location": "Cafe",
+    "requiredSkills": ["Barista"],
+    "minStaff": 1,
+    "assignedEmployeeIds": ["emp_002"],
+    "status": "FILLED"
+  },
+  {
+    "id": "shift_010",
+    "date": "2025-12-29",
+    "startTime": "07:00",
+    "endTime": "15:00",
+    "location": "Warehouse",
+    "requiredSkills": ["Supervisor"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_011",
+    "date": "2025-12-30",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 2,
+    "assignedEmployeeIds": ["emp_001"],
+    "status": "PARTIALLY_FILLED"
+  },
+  {
+    "id": "shift_012",
+    "date": "2025-12-31",
+    "startTime": "12:00",
+    "endTime": "18:00",
+    "location": "Kitchen",
+    "requiredSkills": ["Cook", "Supervisor"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_013",
+    "date": "2026-01-01",
+    "startTime": "09:00",
+    "endTime": "13:00",
+    "location": "Cafe",
+    "requiredSkills": ["Barista"],
+    "minStaff": 2,
+    "assignedEmployeeIds": ["emp_002"],
+    "status": "PARTIALLY_FILLED"
+  },
+  {
+    "id": "shift_014",
+    "date": "2026-01-02",
+    "startTime": "15:00",
+    "endTime": "19:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_015",
+    "date": "2026-01-03",
+    "startTime": "06:00",
+    "endTime": "14:00",
+    "location": "Kitchen",
+    "requiredSkills": ["Cook"],
+    "minStaff": 1,
+    "assignedEmployeeIds": ["emp_003"],
+    "status": "FILLED"
+  },
+  {
+    "id": "shift_016",
+    "date": "2026-01-04",
+    "startTime": "08:00",
+    "endTime": "12:00",
+    "location": "Warehouse",
+    "requiredSkills": ["Supervisor"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_017",
+    "date": "2026-01-05",
+    "startTime": "11:00",
+    "endTime": "15:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 2,
+    "assignedEmployeeIds": ["emp_001"],
+    "status": "PARTIALLY_FILLED"
+  },
+  {
+    "id": "shift_018",
+    "date": "2026-01-06",
+    "startTime": "14:00",
+    "endTime": "18:00",
+    "location": "Cafe",
+    "requiredSkills": ["Barista"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_019",
+    "date": "2026-01-07",
+    "startTime": "09:00",
+    "endTime": "17:00",
+    "location": "Kitchen",
+    "requiredSkills": ["Cook", "Supervisor"],
+    "minStaff": 1,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  },
+  {
+    "id": "shift_020",
+    "date": "2026-01-08",
+    "startTime": "08:00",
+    "endTime": "11:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 2,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
+  }
+]

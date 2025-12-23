@@ -1,0 +1,77 @@
+[
+  {
+    "id": "emp_001",
+    "firstName": "John",
+    "lastName": "Smith",
+    "employmentType": "FULL_TIME",
+    "skills": ["Cashier", "Supervisor"],
+    "dailyHourLimit": 8,
+    "weeklyHourLimit": 40,
+    "availability": [
+      { "day": "MONDAY", "startTime": "07:00", "endTime": "18:00" },
+      { "day": "TUESDAY", "startTime": "07:00", "endTime": "18:00" },
+      { "day": "WEDNESDAY", "startTime": "07:00", "endTime": "18:00" },
+      { "day": "THURSDAY", "startTime": "07:00", "endTime": "18:00" },
+      { "day": "FRIDAY", "startTime": "07:00", "endTime": "18:00" }
+    ]
+  },
+  {
+    "id": "emp_002",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "employmentType": "PART_TIME",
+    "skills": ["Barista", "Cashier"],
+    "dailyHourLimit": 6,
+    "weeklyHourLimit": 25,
+    "availability": [
+      { "day": "MONDAY", "startTime": "06:00", "endTime": "14:00" },
+      { "day": "WEDNESDAY", "startTime": "06:00", "endTime": "14:00" },
+      { "day": "FRIDAY", "startTime": "06:00", "endTime": "14:00" }
+    ]
+  },
+  {
+    "id": "emp_003",
+    "firstName": "Bob",
+    "lastName": "Wilson",
+    "employmentType": "FULL_TIME",
+    "skills": ["Cook", "Supervisor"],
+    "dailyHourLimit": 8,
+    "weeklyHourLimit": 40,
+    "availability": [
+      { "day": "MONDAY", "startTime": "10:00", "endTime": "22:00" },
+      { "day": "TUESDAY", "startTime": "10:00", "endTime": "22:00" },
+      { "day": "WEDNESDAY", "startTime": "10:00", "endTime": "22:00" },
+      { "day": "THURSDAY", "startTime": "10:00", "endTime": "22:00" },
+      { "day": "FRIDAY", "startTime": "10:00", "endTime": "22:00" }
+    ]
+  },
+  {
+    "id": "emp_004",
+    "firstName": "Emily",
+    "lastName": "Brown",
+    "employmentType": "PART_TIME",
+    "skills": ["Barista"],
+    "dailyHourLimit": 5,
+    "weeklyHourLimit": 20,
+    "availability": [
+      { "day": "SATURDAY", "startTime": "07:00", "endTime": "15:00" },
+      { "day": "SUNDAY", "startTime": "07:00", "endTime": "15:00" }
+    ]
+  },
+  {
+    "id": "emp_005",
+    "firstName": "Michael",
+    "lastName": "Lee",
+    "employmentType": "FULL_TIME",
+    "skills": ["Cashier"],
+    "dailyHourLimit": 8,
+    "weeklyHourLimit": 40,
+    "availability": [
+      { "day": "MONDAY", "startTime": "08:00", "endTime": "17:00" },
+      { "day": "TUESDAY", "startTime": "08:00", "endTime": "17:00" },
+      { "day": "WEDNESDAY", "startTime": "08:00", "endTime": "17:00" },
+      { "day": "THURSDAY", "startTime": "08:00", "endTime": "17:00" },
+      { "day": "FRIDAY", "startTime": "08:00", "endTime": "17:00" }
+    ]
+  }
+]
