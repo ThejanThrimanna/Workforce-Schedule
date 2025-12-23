@@ -21,7 +21,6 @@ interface ShiftDao {
         endDate: Long
     ): Flow<List<ShiftEntity>>
 
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(shifts: List<ShiftEntity>): List<Long>
 

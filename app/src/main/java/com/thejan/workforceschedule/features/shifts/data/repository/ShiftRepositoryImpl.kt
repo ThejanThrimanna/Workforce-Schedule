@@ -29,9 +29,9 @@ class ShiftRepositoryImpl @Inject constructor(
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    override suspend fun fetchShifts(): Boolean {
+    override suspend fun fetchShifts() {
         val shifts = localJson.fetchShifts()
         val entities = shifts.map(mapper::dtoToEntity)
-        return dao.upsertAll(entities).isEmpty()
+        dao.upsertAll(entities)
     }
 }

@@ -1,5 +1,8 @@
 package com.thejan.workforceschedule.di
 
+import com.thejan.workforceschedule.features.employees.domain.repository.EmployeeRepository
+import com.thejan.workforceschedule.features.employees.domain.usecase.FetchEmployeeUseCase
+import com.thejan.workforceschedule.features.employees.domain.usecase.GetEmployeeUseCase
 import com.thejan.workforceschedule.features.shifts.domain.repository.ShiftRepository
 import com.thejan.workforceschedule.features.shifts.domain.usecase.FetchShiftsUseCase
 import com.thejan.workforceschedule.features.shifts.domain.usecase.GetShiftsUseCase
@@ -26,5 +29,21 @@ object UseCaseModule {
         repository: ShiftRepository,
     ): GetShiftsUseCase {
         return GetShiftsUseCase(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFetchEmployeeUseCase(
+        repository: EmployeeRepository,
+    ): FetchEmployeeUseCase {
+        return FetchEmployeeUseCase(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetEmployeeUseCase(
+        repository: EmployeeRepository,
+    ): GetEmployeeUseCase {
+        return GetEmployeeUseCase(repository)
     }
 }

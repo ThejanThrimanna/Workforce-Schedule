@@ -23,6 +23,7 @@ import com.thejan.workforceschedule.features.shifts.presentation.ShiftsScreen
 import com.thejan.workforceschedule.navigation.Screen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.thejan.workforceschedule.features.employees.presentation.EmployeesViewModel
 import com.thejan.workforceschedule.features.shifts.presentation.ShiftsViewModel
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -77,8 +78,9 @@ fun DashboardScreen(rootNavController: NavController) {
                 val viewModel: ShiftsViewModel = hiltViewModel(backStackEntry)
                 ShiftsScreen(viewModel)
             }
-            composable(Screen.Employee.route) {
-                EmployeesScreen()
+            composable(Screen.Employee.route) { backStackEntry ->
+                val viewModel: EmployeesViewModel = hiltViewModel(backStackEntry)
+                EmployeesScreen(viewModel)
             }
         }
     }

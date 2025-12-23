@@ -7,5 +7,7 @@ import javax.inject.Inject
 class FetchShiftsUseCase @Inject constructor(
     private val repository: ShiftRepository,
 ) {
-    suspend operator fun invoke(): Boolean = repository.fetchShifts()
+    suspend operator fun invoke() {
+        repository.fetchShifts()
+    }
 }

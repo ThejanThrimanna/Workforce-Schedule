@@ -6,5 +6,5 @@ import java.time.LocalDate
 
 interface ShiftRepository {
     suspend fun getShifts(startDate: LocalDate?, endDate: LocalDate?): Flow<List<ShiftEntity>>
-    suspend fun fetchShifts(): Boolean
+    suspend fun fetchShifts()
 }
