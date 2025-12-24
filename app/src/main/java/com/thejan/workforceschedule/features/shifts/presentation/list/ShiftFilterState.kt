@@ -1,7 +1,5 @@
-package com.thejan.workforceschedule.features.shifts.presentation
+package com.thejan.workforceschedule.features.shifts.presentation.list
 
-import androidx.annotation.StringRes
-import com.thejan.workforceschedule.R
 import com.thejan.workforceschedule.features.shifts.data.models.ShiftStatus
 import java.time.LocalDate
 

@@ -218,5 +218,16 @@
     "minStaff": 2,
     "assignedEmployeeIds": [],
     "status": "OPEN"
+  },
+  {
+    "id": "shift_021",
+    "date": "2025-12-25",
+    "startTime": "08:00",
+    "endTime": "10:00",
+    "location": "Retail",
+    "requiredSkills": ["Cashier"],
+    "minStaff": 2,
+    "assignedEmployeeIds": [],
+    "status": "OPEN"
   }
 ]

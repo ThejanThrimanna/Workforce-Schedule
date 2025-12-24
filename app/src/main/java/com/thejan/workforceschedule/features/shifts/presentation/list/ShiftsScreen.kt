@@ -1,7 +1,8 @@
-package com.thejan.workforceschedule.features.shifts.presentation
+package com.thejan.workforceschedule.features.shifts.presentation.list
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,14 +33,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.thejan.workforceschedule.core.data.local.database.entities.ShiftEntity
+import com.thejan.workforceschedule.navigation.Screen
 import com.thejan.workforceschedule.ui.dialogs.DatePickerDialogWrapper
 import com.thejan.workforceschedule.utils.DateUtils
 import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ShiftsScreen(viewModel: ShiftsViewModel) {
+fun ShiftsScreen(viewModel: ShiftsViewModel, navController: NavController) {
 
     val uiState by viewModel.uiState.collectAsState()
 
@@ -56,6 +59,8 @@ fun ShiftsScreen(viewModel: ShiftsViewModel) {
                 .fillMaxSize()
                 .padding(padding)
         ) {
+            HorizontalDivider()
+
             ShiftsFilterBar(
                 filterState = uiState.filterState,
                 onStartDateClick = {
@@ -71,7 +76,13 @@ fun ShiftsScreen(viewModel: ShiftsViewModel) {
 
             ShiftListContent(
                 shifts = uiState.shifts,
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize().padding(bottom = 80.dp),
+                onShiftClick = { shiftId ->
+                    navController.navigate(
+                        Screen.ShiftDetails.createRoute(shiftId)
+                    )
+                },
+                navController = navController
             )
         }
     }
@@ -168,7 +179,9 @@ private fun FilterChip(
 @Composable
 fun ShiftListContent(
     shifts: List<ShiftEntity>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onShiftClick: (String) -> Unit,
+    navController: NavController
 ) {
     if (shifts.isEmpty()) {
         Box(
@@ -187,7 +200,11 @@ fun ShiftListContent(
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(shifts.size) { index ->
-                ShiftListItem(shifts[index])
+                ShiftListItem(shifts[index], onClick = {
+                    navController.navigate(
+                        Screen.ShiftDetails.createRoute(shifts[index].id)
+                    )
+                })
             }
         }
     }
@@ -195,9 +212,11 @@ fun ShiftListContent(
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
-fun ShiftListItem(shift: ShiftEntity) {
+fun ShiftListItem(shift: ShiftEntity, onClick: (String) -> Unit) {
     Card(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick(shift.id) }
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
 

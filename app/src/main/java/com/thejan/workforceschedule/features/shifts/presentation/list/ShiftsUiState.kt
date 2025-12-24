@@ -1,4 +1,4 @@
-package com.thejan.workforceschedule.features.shifts.presentation
+package com.thejan.workforceschedule.features.shifts.presentation.list
 
 import com.thejan.workforceschedule.core.data.local.database.entities.ShiftEntity
 

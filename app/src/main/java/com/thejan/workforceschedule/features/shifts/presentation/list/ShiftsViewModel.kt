@@ -1,4 +1,4 @@
-package com.thejan.workforceschedule.features.shifts.presentation
+package com.thejan.workforceschedule.features.shifts.presentation.list
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -90,10 +90,6 @@ class ShiftsViewModel @Inject constructor(
             else current.copy(endDate = date)
         }
     }
-
-    fun onStartDateClicked() {}
-
-    fun onEndDateClicked() {}
 
     fun onAdvancedFilterClicked() {}
 

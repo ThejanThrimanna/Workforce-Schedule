@@ -26,4 +26,41 @@ interface ShiftDao {
 
     @Query("SELECT COUNT(*) FROM shifts")
     suspend fun count(): Int
+
+    @Query("SELECT * FROM shifts WHERE id = :shiftId LIMIT 1")
+    fun observeShiftById(shiftId: String): Flow<ShiftEntity?>
+
+    @Query(
+        """
+        SELECT EXISTS(
+            SELECT 1 FROM shifts
+            WHERE assignedEmployeeIds LIKE '%' || :employeeId || '%'
+            AND startTimeMillis < :shiftEnd
+            AND endTimeMillis > :shiftStart
+        )
+        """
+    )
+    suspend fun hasShiftConflict(
+        employeeId: String,
+        shiftStart: Long,
+        shiftEnd: Long
+    ): Boolean
+
+    @Query("SELECT assignedEmployeeIds FROM shifts WHERE id = :shiftId LIMIT 1")
+    suspend fun getAssignedEmployeeIds(shiftId: String): String?
+
+    @Query(
+        """
+        UPDATE shifts
+        SET assignedEmployeeIds = :employeeIds,
+            updatedAt = :updatedAt
+        WHERE id = :shiftId
+        """
+    )
+    suspend fun updateAssignedEmployees(
+        shiftId: String,
+        employeeIds: String,
+        updatedAt: Long
+    )
+
 }

@@ -67,7 +67,7 @@ object DateUtils {
         return Instant.ofEpochMilli(millis)
             .atZone(ZoneId.systemDefault())
             .toLocalDate()
-            .format(DateTimeFormatter.ofPattern("dd MMM yy"))
+            .format(DateTimeFormatter.ofPattern("EEE, dd MMM yy"))
     }
 
     fun millisToTime(millis: Long): String {

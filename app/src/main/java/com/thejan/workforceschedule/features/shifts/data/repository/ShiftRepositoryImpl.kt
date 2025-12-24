@@ -7,6 +7,7 @@ import com.thejan.workforceschedule.core.data.local.database.entities.ShiftEntit
 import com.thejan.workforceschedule.features.shifts.data.datasource.remote.MockShiftRemoteDataSource
 import com.thejan.workforceschedule.features.shifts.data.mapper.ShiftMapper
 import com.thejan.workforceschedule.features.shifts.domain.repository.ShiftRepository
+import com.thejan.workforceschedule.utils.AvailabilityUtils
 import com.thejan.workforceschedule.utils.DateUtils
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
@@ -33,5 +34,27 @@ class ShiftRepositoryImpl @Inject constructor(
         val shifts = localJson.fetchShifts()
         val entities = shifts.map(mapper::dtoToEntity)
         dao.upsertAll(entities)
+    }
+
+    override suspend fun getShiftById(id: String): Flow<ShiftEntity?> {
+        return dao.observeShiftById(id)
+    }
+
+    override suspend fun updateAssignedEmployees(
+        shiftId: String,
+        employeeIds: List<String>
+    ) {
+        val existing = dao.getAssignedEmployeeIds(shiftId)
+
+        val mergedIds = AvailabilityUtils.mergeEmployeeIds(
+            existing = existing,
+            newIds = employeeIds
+        )
+
+        dao.updateAssignedEmployees(
+            shiftId = shiftId,
+            employeeIds = mergedIds,
+            updatedAt = System.currentTimeMillis()
+        )
     }
 }

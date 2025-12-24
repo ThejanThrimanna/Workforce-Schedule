@@ -2,8 +2,6 @@ package com.thejan.workforceschedule.features.dashboard.presentation
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.navigation.compose.composable
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Person
@@ -13,18 +11,18 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
 import com.thejan.workforceschedule.features.dashboard.data.model.BottomNavItem
 import com.thejan.workforceschedule.features.employees.presentation.EmployeesScreen
-import com.thejan.workforceschedule.features.shifts.presentation.ShiftsScreen
-import com.thejan.workforceschedule.navigation.Screen
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
 import com.thejan.workforceschedule.features.employees.presentation.EmployeesViewModel
-import com.thejan.workforceschedule.features.shifts.presentation.ShiftsViewModel
+import com.thejan.workforceschedule.features.shifts.presentation.list.ShiftsScreen
+import com.thejan.workforceschedule.features.shifts.presentation.list.ShiftsViewModel
+import com.thejan.workforceschedule.navigation.Screen
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -76,7 +74,7 @@ fun DashboardScreen(rootNavController: NavController) {
         ) {
             composable(Screen.Shifts.route) { backStackEntry ->
                 val viewModel: ShiftsViewModel = hiltViewModel(backStackEntry)
-                ShiftsScreen(viewModel)
+                ShiftsScreen(viewModel, rootNavController)
             }
             composable(Screen.Employee.route) { backStackEntry ->
                 val viewModel: EmployeesViewModel = hiltViewModel(backStackEntry)
