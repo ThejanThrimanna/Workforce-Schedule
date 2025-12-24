@@ -4,6 +4,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.thejan.workforceschedule.features.employees.domain.usecase.FetchEmployeeUseCase
 import com.thejan.workforceschedule.features.shifts.domain.usecase.FetchShiftsUseCase
 import com.thejan.workforceschedule.features.shifts.domain.usecase.GetShiftsUseCase
 import com.thejan.workforceschedule.utils.DateUtils
@@ -21,6 +22,7 @@ import javax.inject.Inject
 @RequiresApi(Build.VERSION_CODES.O)
 @HiltViewModel
 class ShiftsViewModel @Inject constructor(
+    private val fetchEmployeesUseCase: FetchEmployeeUseCase,
     private val fetchShiftUseCase: FetchShiftsUseCase,
     private val getShiftUseCase: GetShiftsUseCase
 ) : ViewModel() {
@@ -38,6 +40,7 @@ class ShiftsViewModel @Inject constructor(
     val uiState: StateFlow<ShiftsUiState> = _uiState
 
     init {
+        fetchEmployees()
         fetchShifts()
         observeShifts()
     }
@@ -91,7 +94,13 @@ class ShiftsViewModel @Inject constructor(
         }
     }
 
-    fun onAdvancedFilterClicked() {}
+    private fun fetchEmployees() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+            fetchEmployeesUseCase()
+            _uiState.update { it.copy(isLoading = false) }
+        }
+    }
 
     companion object {
         private fun initialFilterState(): ShiftFilterState {

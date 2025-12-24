@@ -14,7 +14,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class EmployeesViewModel @Inject constructor(
-    private val fetchEmployeesUseCase: FetchEmployeeUseCase,
     private val getEmployeesUseCase: GetEmployeeUseCase
 ) : ViewModel() {
 
@@ -27,16 +26,7 @@ class EmployeesViewModel @Inject constructor(
     val uiState: StateFlow<EmployeesUiState> = _uiState.asStateFlow()
 
     init {
-        fetchEmployees()
         observeEmployees()
-    }
-
-    private fun fetchEmployees() {
-        viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true) }
-            fetchEmployeesUseCase()
-            _uiState.update { it.copy(isLoading = false) }
-        }
     }
 
     private fun observeEmployees() {

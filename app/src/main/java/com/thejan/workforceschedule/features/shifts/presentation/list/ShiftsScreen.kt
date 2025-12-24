@@ -69,7 +69,6 @@ fun ShiftsScreen(viewModel: ShiftsViewModel, navController: NavController) {
                 onEndDateClick = {
                     showEndPicker = true
                 },
-                onAdvancedFilterClick = viewModel::onAdvancedFilterClicked
             )
 
             HorizontalDivider()
@@ -134,7 +133,6 @@ fun ShiftsFilterBar(
     filterState: ShiftFilterState?,
     onStartDateClick: () -> Unit,
     onEndDateClick: () -> Unit,
-    onAdvancedFilterClick: () -> Unit
 ) {
     val formatter = remember { DateTimeFormatter.ofPattern("dd MMM yy") }
 
@@ -158,10 +156,6 @@ fun ShiftsFilterBar(
         )
 
         Spacer(modifier = Modifier.weight(1f))
-
-        TextButton(onClick = onAdvancedFilterClick) {
-            Text("Advanced")
-        }
     }
 }
 
