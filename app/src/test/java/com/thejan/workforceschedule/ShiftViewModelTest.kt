@@ -2,6 +2,7 @@ package com.thejan.workforceschedule
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.thejan.workforceschedule.core.data.local.database.entities.ShiftEntity
+import com.thejan.workforceschedule.features.employees.domain.usecase.FetchEmployeeUseCase
 import com.thejan.workforceschedule.features.shifts.domain.usecase.FetchShiftsUseCase
 import com.thejan.workforceschedule.features.shifts.domain.usecase.GetShiftsUseCase
 import com.thejan.workforceschedule.features.shifts.presentation.list.ShiftsViewModel
@@ -34,6 +35,7 @@ class ShiftsViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
 
     private val fetchShiftsUseCase: FetchShiftsUseCase = mockk(relaxed = true)
+    private val fetchEmployeesUseCase: FetchEmployeeUseCase = mockk(relaxed = true)
     private val getShiftsUseCase: GetShiftsUseCase = mockk()
 
     private lateinit var viewModel: ShiftsViewModel
@@ -47,8 +49,9 @@ class ShiftsViewModelTest {
         } returns flowOf(mockShiftList())
 
         viewModel = ShiftsViewModel(
+            fetchEmployeesUseCase = fetchEmployeesUseCase,
             fetchShiftUseCase = fetchShiftsUseCase,
-            getShiftUseCase = getShiftsUseCase
+            getShiftUseCase = getShiftsUseCase,
         )
     }
 
