@@ -36,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.thejan.workforceschedule.core.data.local.database.entities.ShiftEntity
 import com.thejan.workforceschedule.navigation.Screen
+import com.thejan.workforceschedule.ui.common.ScreenHeader
 import com.thejan.workforceschedule.ui.dialogs.DatePickerDialogWrapper
 import com.thejan.workforceschedule.utils.DateUtils
 import java.time.format.DateTimeFormatter
@@ -117,14 +118,7 @@ fun ShiftsScreen(viewModel: ShiftsViewModel, navController: NavController) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ShiftsTopBar() {
-    TopAppBar(
-        title = {
-            Text(
-                text = "Shifts",
-                style = MaterialTheme.typography.titleLarge
-            )
-        }
-    )
+    ScreenHeader("Shifts")
 }
 
 @RequiresApi(Build.VERSION_CODES.O)

@@ -24,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.thejan.workforceschedule.core.data.local.database.entities.EmployeeEntity
+import com.thejan.workforceschedule.ui.common.ScreenHeader
 
 @Composable
 fun EmployeesScreen(viewModel: EmployeesViewModel) {
@@ -54,14 +55,7 @@ fun EmployeesScreen(viewModel: EmployeesViewModel) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EmployeesTopBar() {
-    TopAppBar(
-        title = {
-            Text(
-                text = "Employees",
-                style = MaterialTheme.typography.titleLarge
-            )
-        }
-    )
+    ScreenHeader("Employees")
 }
 
 @Composable

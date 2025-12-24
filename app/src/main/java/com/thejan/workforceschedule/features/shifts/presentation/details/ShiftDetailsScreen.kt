@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.thejan.workforceschedule.core.data.local.database.entities.EmployeeEntity
+import com.thejan.workforceschedule.ui.common.ScreenHeader
 import com.thejan.workforceschedule.utils.DateUtils
 import com.thejan.workforceschedule.utils.SkillUtils
 
@@ -45,14 +46,7 @@ fun ShiftDetailsScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Shift Details") },
-                navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
-                    }
-                }
-            )
+            ScreenHeader("Shift Details", true, { navController.popBackStack() })
         }
     ) { padding ->
 
