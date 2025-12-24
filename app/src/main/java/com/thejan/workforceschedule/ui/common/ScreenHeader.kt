@@ -9,6 +9,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -24,7 +26,9 @@ fun ScreenHeader(
                 text = title,
                 style = MaterialTheme.typography.titleLarge.copy(
                     color = MaterialTheme.colorScheme.primary,
-                    fontSize = 26.sp
+                    fontSize = 26.sp,
+                    fontStyle = FontStyle.Normal,
+                    fontWeight = FontWeight.Bold
                 )
             )
 
